@@ -16,8 +16,12 @@ export function CtaBand({
   secondary?: { label: string; href: string };
 }) {
   return (
-    <section className="dark bg-background text-foreground">
-      <Container className="section">
+    <section className="relative overflow-hidden border-t border-border bg-card">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 right-[-10%] size-[34rem] rounded-full bg-brand/10 blur-3xl"
+      />
+      <Container className="section relative">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <h2 className="text-h1">{title}</h2>
@@ -26,7 +30,7 @@ export function CtaBand({
               Or write to{" "}
               <a
                 href={`mailto:${site.email}`}
-                className="inline-flex min-h-6 items-center font-medium text-foreground underline underline-offset-4 hover:text-brand"
+                className="link inline-flex min-h-6 items-center font-medium"
               >
                 {site.email}
               </a>

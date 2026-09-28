@@ -7,12 +7,15 @@ import { cn } from "@/lib/utils";
  */
 export function SectionHeading({
   title,
+  qualifier,
   lede,
   as: Heading = "h2",
   className,
   action,
 }: {
   title: string;
+  /** Second line of the title, set in the muted tone. */
+  qualifier?: string;
   lede?: string;
   as?: "h1" | "h2";
   className?: string;
@@ -25,7 +28,12 @@ export function SectionHeading({
         className,
       )}
     >
-      <Heading className="text-h2 lg:col-span-5">{title}</Heading>
+      <Heading className="text-h2 lg:col-span-5">
+        {title}
+        {qualifier && (
+          <span className="block text-muted-foreground">{qualifier}</span>
+        )}
+      </Heading>
       {(lede || action) && (
         <div className="flex flex-col gap-4 lg:col-span-6 lg:col-start-7">
           {lede && <p className="text-lede measure">{lede}</p>}

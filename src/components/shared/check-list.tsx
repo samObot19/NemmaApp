@@ -22,7 +22,7 @@ export function CheckList({
       {items.map((item) => (
         <li key={item} className="text-small flex gap-3">
           <Check
-            className="mt-1 size-4 shrink-0 text-brand"
+            className="mt-1 size-4 shrink-0 text-foreground/60"
             aria-hidden="true"
           />
           <span>{item}</span>

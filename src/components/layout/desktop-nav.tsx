@@ -58,7 +58,7 @@ export function DesktopNav() {
                     <NavigationMenuLink asChild>
                       <Link
                         href="/services"
-                        className="flex min-h-11 items-center rounded-sm p-3 text-sm font-medium text-brand"
+                        className="link flex min-h-11 items-center rounded-sm p-3 text-sm font-medium"
                       >
                         All services in detail
                       </Link>

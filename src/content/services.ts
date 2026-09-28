@@ -9,9 +9,9 @@ export const services: Service[] = [
     description:
       "We design and build complete products: the user-facing application, the API behind it, the data model, and the operational pieces around them. The goal is software that a team can keep changing safely years after launch.",
     capabilities: [
-      "Product web applications with React and Next.js",
+      "Product web applications, server-rendered and fast",
       "REST APIs with typed contracts and versioning",
-      "Relational data modelling on PostgreSQL",
+      "Relational data modelling and migrations",
       "Authentication, roles, and permission models",
       "Background jobs, queues, and scheduled work",
       "Automated testing and continuous integration",
@@ -61,16 +61,16 @@ export const services: Service[] = [
     slug: "backend-api",
     name: "Backend and API engineering",
     summary:
-      "Services in Go, Python, and TypeScript with the databases, caches, and queues that make them reliable.",
+      "Backend services with the databases, caches, and queues that make them reliable, built to be operated for years.",
     description:
       "Backend work is where most of the risk in a system lives. We build services with clear module boundaries, explicit data ownership, and the observability needed to operate them.",
     capabilities: [
-      "Services in Go, Python (FastAPI), and Node.js",
-      "PostgreSQL schema design, migrations, and query performance",
-      "Caching and rate limiting with Redis",
+      "Long-running services with clear module boundaries",
+      "Schema design, migrations, and query performance",
+      "Caching and rate limiting",
       "Message queues and asynchronous processing",
       "Authentication, SSO, and API keys for partners",
-      "Containerised deployment on Azure and AWS",
+      "Containerised cloud deployment",
     ],
     technologies: ["Go", "Python", "FastAPI", "PostgreSQL", "Redis", "Docker"],
   },

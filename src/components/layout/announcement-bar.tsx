@@ -48,7 +48,7 @@ export function AnnouncementBar() {
           <span>{announcement.text}</span>
           <Link
             href={announcement.href}
-            className="font-medium text-brand underline-offset-4 hover:underline"
+            className="link font-medium"
           >
             {announcement.label}
           </Link>

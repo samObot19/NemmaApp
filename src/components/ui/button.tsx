@@ -18,13 +18,13 @@ const buttonVariants = cva(
         outline:
           "border-border-strong bg-transparent text-foreground hover:bg-secondary",
         ghost: "text-foreground hover:bg-secondary",
-        link: "h-auto min-h-6 rounded-none border-0 px-0 py-1 text-brand underline-offset-4 hover:underline active:translate-y-0",
+        link: "h-auto min-h-6 rounded-none border-0 px-0 py-1 text-foreground underline decoration-border-strong underline-offset-4 hover:decoration-foreground active:translate-y-0",
       },
       size: {
         default:
-          "h-11 px-5 has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4",
-        sm: "h-10 px-4 text-sm has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3",
-        lg: "h-12 px-6 text-base has-data-[icon=inline-end]:pr-5 has-data-[icon=inline-start]:pl-5",
+          "h-11 px-5 py-2 has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4",
+        sm: "h-10 px-4 py-2 text-sm has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3",
+        lg: "h-12 px-6 py-2.5 text-base has-data-[icon=inline-end]:pr-5 has-data-[icon=inline-start]:pl-5",
         icon: "size-11",
       },
     },

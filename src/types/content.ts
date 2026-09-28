@@ -42,6 +42,10 @@ export interface Project {
   summary: string;
   /** Short paragraph for the case-study overview. */
   overview: string;
+  /** Nemma's role on the engagement, in plain words. */
+  role: string;
+  /** What was delivered. Short noun phrases; four to five items. */
+  scope: string[];
   challenge: string[];
   approach: string[];
   engineering: string[];

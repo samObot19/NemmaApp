@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
@@ -17,6 +17,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin"],
+  axes: ["opsz"],
 });
 
 export const metadata: Metadata = {
@@ -43,7 +49,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f8fafc",
+  themeColor: "#0a0f1a",
   width: "device-width",
   initialScale: 1,
 };
@@ -67,7 +73,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <script

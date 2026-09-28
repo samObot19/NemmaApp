@@ -9,6 +9,7 @@ export function HowWeWork() {
     <Container as="section" className="section pt-0 lg:pt-0">
       <SectionHeading
         title="How we work"
+        qualifier="Three steps, every engagement."
         lede="The same three steps on every engagement, whatever the stack."
       />
       <HairlineGrid items={howWeWork} columns={3} numbered className="mt-4" />

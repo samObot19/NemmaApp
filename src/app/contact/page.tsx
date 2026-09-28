@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <p className="text-muted-foreground">Prefer email?</p>
                 <a
                   href={`mailto:${site.email}`}
-                  className="mt-1 inline-flex min-h-6 items-center font-medium text-brand hover:underline"
+                  className="link mt-1 inline-flex min-h-6 items-center font-medium"
                 >
                   {site.email}
                 </a>
@@ -86,7 +86,7 @@ export default function ContactPage() {
                 ))}
                 <a
                   href="#location"
-                  className="mt-1 inline-flex min-h-6 items-center font-medium text-brand hover:underline"
+                  className="link mt-1 inline-flex min-h-6 items-center font-medium"
                 >
                   See the map
                 </a>

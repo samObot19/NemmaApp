@@ -15,15 +15,10 @@ import { Container } from "@/components/layout/container";
 import { CheckList } from "@/components/shared/check-list";
 import { CtaBand } from "@/components/shared/cta-band";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { TagList } from "@/components/shared/tag";
 import { ArchitectureDiagram } from "@/components/work/architecture-diagram";
+import { EngagementFacts } from "@/components/work/engagement-facts";
 import { ProjectRow } from "@/components/work/project-row";
-import {
-  getProject,
-  getRelatedProjects,
-  projects,
-  projectStatusLabel,
-} from "@/content/projects";
+import { getProject, getRelatedProjects, projects } from "@/content/projects";
 import { pageMetadata } from "@/lib/metadata";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -96,31 +91,17 @@ export default async function ProjectPage({ params }: Props) {
           </BreadcrumbList>
         </Breadcrumb>
         <div className="mt-6 grid gap-8 lg:grid-cols-12">
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-9">
             <h1 className="text-h1">{project.title}</h1>
             <p className="text-lede mt-6 measure">{project.overview}</p>
           </div>
-          <dl className="grid grid-cols-2 gap-6 text-sm lg:col-span-4 lg:col-start-9 lg:grid-cols-1 lg:border-l lg:border-border lg:pl-8">
-            <div>
-              <dt className="text-muted-foreground">Category</dt>
-              <dd className="mt-1 font-medium">{project.category}</dd>
-            </div>
-            <div>
-              <dt className="text-muted-foreground">Status</dt>
-              <dd className="mt-1 font-medium">
-                {projectStatusLabel[project.status]}
-              </dd>
-            </div>
-            <div className="col-span-2 lg:col-span-1">
-              <dt className="text-muted-foreground">Technologies</dt>
-              <dd className="mt-2">
-                <TagList items={project.technologies} />
-              </dd>
-            </div>
-          </dl>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-12">
+          <EngagementFacts project={project} />
+        </div>
+
+        <div className="mt-8">
           <Block title="The challenge">
             <Prose paragraphs={project.challenge} />
           </Block>
@@ -169,7 +150,7 @@ export default async function ProjectPage({ params }: Props) {
               </Button>
             }
           />
-          <ul className="mt-4 divide-y divide-border">
+          <ul className="mt-10 flex flex-col gap-4">
             {related.map((item) => (
               <ProjectRow key={item.slug} project={item} />
             ))}
@@ -179,7 +160,12 @@ export default async function ProjectPage({ params }: Props) {
 
       <CtaBand
         title="Building something similar?"
-        body="We can talk through the problem and how we would approach it before any commitment."
+        body="Tell us about your system. We will reply with how we would approach it, what we would build first, and what we would leave out. No commitment needed to start the conversation."
+        primary={{
+          label: "Discuss a similar system",
+          href: `/contact?type=project&about=${project.slug}`,
+        }}
+        secondary={{ label: "All case studies", href: "/work" }}
       />
     </>
   );

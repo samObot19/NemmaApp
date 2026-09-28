@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
+import { getProject } from "@/content/projects";
 import { site } from "@/content/site";
 import {
   inquiryTypes,
@@ -42,6 +43,10 @@ export function ContactForm() {
   const searchParams = useSearchParams();
   const requested = searchParams.get("type");
   const initialType = isInquiryType(requested) ? requested : "project";
+  const about = getProject(searchParams.get("about") ?? "");
+  const initialMessage = about
+    ? `I am interested in something similar to your work on "${about.title}".\n\n`
+    : "";
 
   const id = useId();
   const formRef = useRef<HTMLFormElement>(null);
@@ -50,7 +55,7 @@ export function ContactForm() {
     email: "",
     company: "",
     type: initialType,
-    message: "",
+    message: initialMessage,
   });
   const [errors, setErrors] = useState<ContactErrors>({});
   const [touched, setTouched] = useState<

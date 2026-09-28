@@ -33,7 +33,7 @@ export function Footer() {
             </p>
             <a
               href={`mailto:${site.email}`}
-              className="text-small mt-5 inline-flex min-h-11 items-center font-medium text-brand underline-offset-4 hover:underline sm:min-h-6"
+              className="link text-small mt-5 inline-flex min-h-11 items-center font-medium sm:min-h-6"
             >
               {site.email}
             </a>

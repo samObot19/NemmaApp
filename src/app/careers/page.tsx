@@ -7,21 +7,15 @@ import { CtaBand } from "@/components/shared/cta-band";
 import { HairlineGrid } from "@/components/shared/hairline-grid";
 import { PageHeader } from "@/components/shared/page-header";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { TagList } from "@/components/shared/tag";
 import { culture, typesOfWork, whatToExpect } from "@/content/careers";
-import { technologyGroups } from "@/content/technologies";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = pageMetadata({
   title: "Careers",
   description:
-    "Engineering at Nemma Technology: the culture, the technologies, the kind of work, and how to introduce yourself.",
+    "Engineering at Nemma Technology: the culture, the kind of work, what to expect, and how to introduce yourself.",
   path: "/careers",
 });
-
-const allTechnologies = Array.from(
-  new Set(technologyGroups.flatMap((group) => group.items)),
-);
 
 export default function CareersPage() {
   return (
@@ -54,10 +48,6 @@ export default function CareersPage() {
           <div className="lg:col-span-6">
             <h3 className="text-base font-semibold">What you can expect</h3>
             <CheckList items={whatToExpect} className="mt-4" />
-          </div>
-          <div className="lg:col-span-12">
-            <h3 className="text-base font-semibold">Technologies you will work with</h3>
-            <TagList items={allTechnologies} className="mt-4" />
           </div>
         </div>
       </Container>

@@ -25,7 +25,7 @@ export const culture: Principle[] = [
   },
   {
     title: "Modern tools, boring reliability",
-    body: "Go, TypeScript, Python, PostgreSQL, and language-model tooling, used with the discipline that financial software demands.",
+    body: "Modern languages, relational databases, and language-model tooling, used with the discipline that financial software demands.",
   },
   {
     title: "Learning is part of the job",

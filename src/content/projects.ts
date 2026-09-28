@@ -16,6 +16,14 @@ export const projects: Project[] = [
     status: "in-production",
     summary:
       "A web platform that runs audit engagements end to end: team membership, evidence collection, sign-offs, and an event log, connected to the client's accounting platform.",
+    role: "Design and build of the full platform",
+    scope: [
+      "Auditor web application",
+      "Audit backend service",
+      "Data model and migrations",
+      "Partner API integration",
+      "Firm single sign-on",
+    ],
     overview:
       "An advisory firm needed a single place to run audit engagements. Evidence was arriving by email and spreadsheet, sign-offs were hard to trace, and the ledger data being audited lived in a separate accounting platform. Nemma built the audit platform as a web application with its own backend service and a partner-API integration to that platform.",
     challenge: [
@@ -26,7 +34,7 @@ export const projects: Project[] = [
     approach: [
       "Modelled the audit domain as its own service: engagements, membership, evidence, sign-offs, and an append-only event log, with local identity plus firm single sign-on.",
       "Forwarded questionnaire operations to the accounting platform through a partner API after authorising them locally, keeping one source of truth for ledger data.",
-      "Built the front end as a React single-page application with a scoped lint and test gate so the audit modules could be added incrementally without lowering the bar on the rest of the code.",
+      "Built the front end as a single-page application with a scoped lint and test gate so the audit modules could be added incrementally without lowering the bar on the rest of the code.",
     ],
     engineering: [
       "Content-hashed evidence snapshots so any later change to source data is detectable.",
@@ -56,7 +64,7 @@ export const projects: Project[] = [
         label: "Audit service",
         nodes: ["Engagements", "Evidence", "Sign-offs", "Event log"],
       },
-      { label: "Data", nodes: ["PostgreSQL"] },
+      { label: "Data", nodes: ["Relational database"] },
       { label: "External", nodes: ["Accounting platform partner API"] },
     ],
     reviewBeforePublish: true,
@@ -68,6 +76,14 @@ export const projects: Project[] = [
     status: "in-production",
     summary:
       "Partner-facing APIs, payroll pay-schedule workflows, document ingestion, and third-party integrations for a business accounting platform.",
+    role: "Backend engineering and integrations on an existing platform",
+    scope: [
+      "Partner API with scoped keys",
+      "Payroll pay-schedule workflows",
+      "Document ingestion with OCR",
+      "E-commerce integration",
+      "Conversational assistant integration",
+    ],
     overview:
       "A business accounting platform needed to open its ledger to partners and connect to the tools its customers already use. Nemma built and extended the backend services behind it: a partner API with key-based access, payroll pay-period handling, document ingestion, and integrations with an e-commerce platform and a conversational assistant.",
     challenge: [
@@ -103,7 +119,7 @@ export const projects: Project[] = [
         label: "Services",
         nodes: ["Partner API", "Payroll", "Documents", "Integrations"],
       },
-      { label: "Data", nodes: ["PostgreSQL", "Document storage"] },
+      { label: "Data", nodes: ["Relational database", "Document storage"] },
       { label: "External", nodes: ["E-commerce platform", "OCR"] },
     ],
     reviewBeforePublish: true,
@@ -115,17 +131,25 @@ export const projects: Project[] = [
     status: "in-development",
     summary:
       "An internal Nemma product for attendance check-ins and permission requests, delivered where the team already is: Telegram.",
+    role: "Internal product, designed and built by Nemma",
+    scope: [
+      "Modular monolith service",
+      "Telegram bot interface",
+      "Database layer with generated queries",
+      "Notification delivery",
+      "Docker-based deployment",
+    ],
     overview:
-      "Nemma Pulse is an internal tool being built by Nemma for its own team. Employees check in, request time away, and get answers through a Telegram bot; managers approve and see the state of their team from the same place. It is also a proving ground for how we structure Go services.",
+      "Nemma Pulse is an internal tool being built by Nemma for its own team. Employees check in, request time away, and get answers through a Telegram bot; managers approve and see the state of their team from the same place. It is also a proving ground for how we structure backend services.",
     challenge: [
       "A separate attendance app would not get used. The interface had to live inside a messaging tool people already have open.",
       "Attendance and permission rules involve teams, roles, and time, and they must be enforced the same way regardless of which handler receives the message.",
       "The service should stay simple to run: one binary, one database, no orchestration.",
     ],
     approach: [
-      "Built a modular monolith in Go using clean architecture: domain, application, infrastructure, and interface layers, organised by business module.",
+      "Built a modular monolith using clean architecture: domain, application, infrastructure, and interface layers, organised by business module.",
       "Kept the domain layer free of Telegram and database dependencies so rules can be tested without either.",
-      "Generated type-safe database access with sqlc against PostgreSQL, with migrations versioned alongside the code.",
+      "Generated type-safe database access from the schema, with migrations versioned alongside the code.",
     ],
     engineering: [
       "Business modules for users, teams, attendance, permissions, and notifications.",
@@ -147,7 +171,7 @@ export const projects: Project[] = [
         nodes: ["Attendance", "Permissions", "Teams", "Notifications"],
       },
       { label: "Domain", nodes: ["Entities and rules"] },
-      { label: "Infrastructure", nodes: ["PostgreSQL (sqlc)", "Telegram API"] },
+      { label: "Infrastructure", nodes: ["Relational database", "Telegram API"] },
     ],
     reviewBeforePublish: false,
   },

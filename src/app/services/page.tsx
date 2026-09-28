@@ -25,12 +25,7 @@ export default function ServicesPage() {
       <Container as="section" className="pb-16 lg:pb-24">
         <DefinitionList className="border-t border-border">
           {services.map((service) => (
-            <ServiceRow
-              key={service.slug}
-              service={service}
-              detailed
-              headingLevel="h2"
-            />
+            <ServiceRow key={service.slug} service={service} headingLevel="h2" />
           ))}
         </DefinitionList>
       </Container>
