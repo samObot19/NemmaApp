@@ -12,7 +12,7 @@ export interface Service {
   summary: string;
   /** Two or three sentences shown on the services page. */
   description: string;
-  /** Concrete things Nemma builds under this service. */
+  /** Concrete things Nemaa builds under this service. */
   capabilities: string[];
   /** Technologies most often used for this service. */
   technologies: string[];
@@ -42,7 +42,7 @@ export interface Project {
   summary: string;
   /** Short paragraph for the case-study overview. */
   overview: string;
-  /** Nemma's role on the engagement, in plain words. */
+  /** Nemaa's role on the engagement, in plain words. */
   role: string;
   /** What was delivered. Short noun phrases; four to five items. */
   scope: string[];
@@ -52,7 +52,7 @@ export interface Project {
   capabilities: string[];
   technologies: string[];
   /**
-   * Only set when the result has been verified by Nemma.
+   * Only set when the result has been verified by Nemaa.
    * Leave undefined rather than estimating.
    */
   outcome?: string[];

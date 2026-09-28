@@ -14,7 +14,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Work",
   description:
-    "Case studies of systems Nemma has designed and built: accounting and audit platforms, backend services, and internal automation.",
+    "Case studies of systems Nemaa has designed and built: accounting and audit platforms, backend services, and internal automation.",
   path: "/work",
 });
 

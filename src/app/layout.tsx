@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { RouteFocus } from "@/components/layout/route-focus";
 import { SkipLink } from "@/components/layout/skip-link";
+import { ThemeProvider } from "@/components/layout/theme-provider";
 import { site } from "@/content/site";
 
 import "./globals.css";
@@ -49,7 +50,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0f1a",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f7fb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0f1a" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
@@ -73,9 +77,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <ThemeProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -87,6 +93,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -10,7 +10,7 @@ import type { Project } from "@/types/content";
 
 /**
  * Selected work as a tabbed showcase: pick a system, see its architecture
- * and what Nemma delivered. Real case studies, no figures.
+ * and what Nemaa delivered. Real case studies, no figures.
  */
 export function WorkShowcase({ projects }: { projects: Project[] }) {
   const first = projects[0];

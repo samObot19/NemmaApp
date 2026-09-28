@@ -6,7 +6,7 @@ import { SystemDiagram } from "@/components/home/system-diagram";
 
 export function Hero() {
   return (
-    <Container as="section" className="pt-16 pb-16 sm:pt-20 lg:pt-28 lg:pb-24">
+    <Container as="div" className="pt-12 pb-10 sm:pt-16 lg:pt-20 lg:pb-12">
       <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
         <h1 className="text-display max-w-[15ch] lg:col-span-9">
           Software engineering
@@ -15,7 +15,7 @@ export function Hero() {
           </span>
         </h1>
         <p className="text-lede measure lg:col-span-7">
-          Nemma designs and builds accounting and fintech systems, AI
+          Nemaa designs and builds accounting and fintech systems, AI
           applications, automation, and the backend infrastructure behind
           them. Built to be correct, maintainable, and operated for years.
         </p>
@@ -39,6 +39,14 @@ export function Hero() {
           <SystemDiagram />
         </div>
       </div>
+
+      <a
+        href="#services"
+        className="text-label mx-auto mt-12 flex w-fit flex-col items-center gap-2 rounded-sm transition-colors hover:text-foreground lg:mt-16"
+      >
+        <span aria-hidden="true" className="block h-8 w-px bg-border-strong" />
+        Scroll
+      </a>
     </Container>
   );
 }

@@ -6,6 +6,7 @@ import { Container } from "@/components/layout/container";
 import { DesktopNav } from "@/components/layout/desktop-nav";
 import { Logo } from "@/components/layout/brand-mark";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export function Navbar() {
   return (
@@ -15,7 +16,8 @@ export function Navbar() {
         <Container className="flex h-16 items-center justify-between">
           <Logo />
           <DesktopNav />
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
+            <ThemeToggle />
             <Button asChild size="sm" className="hidden lg:inline-flex">
               <Link href="/contact?type=project">Start a project</Link>
             </Button>

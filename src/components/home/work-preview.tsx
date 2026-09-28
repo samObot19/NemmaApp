@@ -8,7 +8,7 @@ import { projects } from "@/content/projects";
 
 export function WorkPreview() {
   return (
-    <Container as="section" className="section pt-0 lg:pt-0">
+    <Container as="div" className="section">
       <SectionHeading
         title="Selected work"
         qualifier="Evidence, not adjectives."

@@ -8,7 +8,7 @@ export function TrustBand() {
   if (clients.length === 0) return null;
 
   return (
-    <Container as="section" className="pb-16 lg:pb-24" aria-labelledby="trust-heading">
+    <Container as="div" className="pb-16 lg:pb-24" aria-labelledby="trust-heading">
       <div className="border-t border-border pt-6">
         <h2 id="trust-heading" className="text-sm text-muted-foreground">
           Businesses we have built for

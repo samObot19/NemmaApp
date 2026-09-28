@@ -41,11 +41,39 @@
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
 
-  --shadow-panel: 0 30px 60px -24px rgb(0 0 0 / 0.65);
+  --shadow-panel: 0 30px 60px -24px rgb(10 15 26 / 0.35);
 }
 
 :root {
+  /* Light theme: the same world in daylight. */
   --ink: #0a0f1a;
+  --background: #f6f7fb;
+  --foreground: #0a0f1a;
+  --card: #ffffff;
+  --card-foreground: #0a0f1a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0f1a;
+  --primary: #0a0f1a;
+  --primary-foreground: #ffffff;
+  --primary-hover: #1c2538;
+  --secondary: rgb(10 15 26 / 0.06);
+  --secondary-foreground: #0a0f1a;
+  --muted: rgb(10 15 26 / 0.04);
+  --muted-foreground: #4b5568;
+  --accent: rgb(15 118 110 / 0.1);
+  --accent-foreground: #0f766e;
+  --destructive: #b91c1c;
+  --border: rgb(10 15 26 / 0.1);
+  --border-strong: rgb(10 15 26 / 0.2);
+  --input: rgb(10 15 26 / 0.2);
+  --ring: #0f766e;
+  --brand: #0f766e;
+  --brand-soft: rgb(15 118 110 / 0.14);
+  --radius: 0.75rem;
+}
+
+.dark {
+  /* Dark studio: the default theme. */
   --background: #0a0f1a;
   --foreground: #f4f6fa;
   --card: #111827;
@@ -68,12 +96,6 @@
   --ring: #2dd4bf;
   --brand: #2dd4bf;
   --brand-soft: rgb(45 212 191 / 0.16);
-  --radius: 0.75rem;
-}
-
-/* The whole site is the dark world now; `.dark` stays as a no-op alias. */
-.dark {
-  --background: #0a0f1a;
 }
 
 @layer base {
@@ -234,9 +256,24 @@
     text-decoration-color: var(--foreground);
   }
 
-  /* Embedded light map, brought into the dark world. */
-  .map-dark {
+  /* Embedded light map, brought into the dark world only. */
+  .dark .map-dark {
     filter: invert(0.92) hue-rotate(180deg) saturate(0.55) brightness(0.95);
+  }
+
+  /* Home chapters: one topic per screen, snapping gently at each start. */
+  .chapters {
+    scroll-snap-type: y proximity;
+  }
+  .chapter {
+    min-height: calc(100svh - 4rem);
+    scroll-snap-align: start;
+    scroll-margin-top: 4rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .chapters {
+      scroll-snap-type: none;
+    }
   }
 
   /* Raised panel: the world's one container. Declared elevation: border only. */

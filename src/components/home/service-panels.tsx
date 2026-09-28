@@ -32,7 +32,7 @@ const icons: Record<ServiceSlug, LucideIcon> = {
  */
 export function ServicePanels() {
   return (
-    <Container as="section" className="section pt-0 lg:pt-0">
+    <Container as="div" className="section">
       <SectionHeading
         title="What we build"
         qualifier="Five areas, one system."

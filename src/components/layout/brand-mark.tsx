@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 /**
  * PLACEHOLDER MARK.
  *
- * Nemma does not have an official logo yet. This is a temporary geometric "N"
+ * Nemaa does not have an official logo yet. This is a temporary geometric "N"
  * so the site has a consistent mark in the navbar, footer, and favicon.
  * When the official logo arrives, replace the SVG in `BrandMark` (and
  * `src/app/icon.svg`) and nothing else needs to change.

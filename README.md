@@ -1,6 +1,6 @@
-# Nemma Technology website
+# Nemaa Technology website
 
-Company website for Nemma Technology, built with Next.js 16 (App Router), TypeScript, Tailwind CSS 4, shadcn/ui, Lucide, and Motion.
+Company website for Nemaa Technology, built with Next.js 16 (App Router), TypeScript, Tailwind CSS 4, shadcn/ui, Lucide, and Motion.
 
 ## Run it
 
@@ -31,13 +31,17 @@ Content is data; components only render it. Editing copy never requires touching
 
 ## Before launch
 
-1. **Domain and inbox.** `src/content/site.ts` still carries `nemma.example` placeholders for `url` and `email`. They appear in the footer, contact page, metadata, sitemap, and robots.
+1. **Domain and inbox.** `src/content/site.ts` still carries `nemaa.example` placeholders for `url` and `email`. They appear in the footer, contact page, metadata, sitemap, and robots.
 2. **Case studies.** Entries in `src/content/projects.ts` with `reviewBeforePublish: true` were drafted from the structure of the engineering work, not from a verified brief. Review the wording, then flip the flag. Add an `outcome` only once it is verified.
 3. **Contact delivery.** The form validates on the client only. With `site.contactEndpoint` set to `null` the submit button reads "Send by email" and opens a prefilled email instead. Point `contactEndpoint` at a route handler or form service that accepts a JSON `ContactPayload` to enable real delivery.
 4. **Social proof.** `src/content/social-proof.ts` holds client logos and testimonials. Both lists are empty, so the "Businesses we have built for" band and the "What clients say" section do not render. Add verified entries (with permission) and they appear on the home page automatically.
 5. **Office map.** The contact page embeds a Google map for `site.address.mapQuery`. Check that the pin lands on the right building; if not, replace `mapQuery` with a more exact query or the coordinates from Google Maps (for example `8.9930,38.7890`).
 6. **Announcement bar.** `announcement` in `src/content/site.ts` controls the notice above the navbar. Set it to `null` to remove it.
 7. **Logo.** The mark in `src/components/layout/brand-mark.tsx` and `src/app/icon.svg` is a temporary geometric placeholder. Replace both when the official logo exists; the Open Graph image in `src/app/opengraph-image.tsx` draws the same mark inline.
+
+## Theme and home chapters
+
+The site ships a dark theme by default and a light theme behind the header toggle (next-themes, class strategy, persisted per browser). Both themes come from the token sets in `src/app/globals.css`. The home page is composed of chapters (`src/components/home/chapter.tsx`), one topic per screen with gentle scroll snapping and a chapter dot navigation on desktop; the chapter list lives in `src/app/page.tsx`.
 
 ## Design notes
 

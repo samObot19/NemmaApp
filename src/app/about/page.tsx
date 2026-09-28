@@ -14,7 +14,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
-    "Nemma Technology is a software development company. What we build, how we think about engineering, and how we work with clients.",
+    "Nemaa Technology is a software development company. What we build, how we think about engineering, and how we work with clients.",
   path: "/about",
 });
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         title="A software company that builds the systems businesses depend on."
-        lede="Nemma Technology designs and builds software for businesses: accounting and fintech systems, AI applications, automation, and the backend services underneath. We take on work where correctness and maintainability matter more than speed of demo."
+        lede="Nemaa Technology designs and builds software for businesses: accounting and fintech systems, AI applications, automation, and the backend services underneath. We take on work where correctness and maintainability matter more than speed of demo."
       />
 
       <Container as="section" className="pb-16 lg:pb-24">
@@ -78,7 +78,7 @@ export default function AboutPage() {
       <HowWeWork />
 
       <CtaBand
-        secondary={{ label: "Careers at Nemma", href: "/careers" }}
+        secondary={{ label: "Careers at Nemaa", href: "/careers" }}
       />
     </>
   );

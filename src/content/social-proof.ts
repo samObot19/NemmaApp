@@ -3,7 +3,7 @@
  *
  * Both lists are empty on purpose. The "Trusted by" band and the
  * testimonials section render nothing while they are empty, so nothing
- * on the site claims a client or a quote that Nemma has not confirmed.
+ * on the site claims a client or a quote that Nemaa has not confirmed.
  * Add entries here (with permission from the people quoted) and the
  * sections appear automatically.
  */

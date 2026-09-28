@@ -6,7 +6,7 @@ import type { Project } from "@/types/content";
  * Every entry with `reviewBeforePublish: true` was drafted from the
  * structure of the engineering work, not from a verified client brief.
  * Client names, metrics, and results are deliberately absent. Add an
- * `outcome` only once Nemma has verified it.
+ * `outcome` only once Nemaa has verified it.
  */
 export const projects: Project[] = [
   {
@@ -25,7 +25,7 @@ export const projects: Project[] = [
       "Firm single sign-on",
     ],
     overview:
-      "An advisory firm needed a single place to run audit engagements. Evidence was arriving by email and spreadsheet, sign-offs were hard to trace, and the ledger data being audited lived in a separate accounting platform. Nemma built the audit platform as a web application with its own backend service and a partner-API integration to that platform.",
+      "An advisory firm needed a single place to run audit engagements. Evidence was arriving by email and spreadsheet, sign-offs were hard to trace, and the ledger data being audited lived in a separate accounting platform. Nemaa built the audit platform as a web application with its own backend service and a partner-API integration to that platform.",
     challenge: [
       "Engagements involve several roles with different permissions, and those permissions have to hold across both the audit platform and the accounting data it reads.",
       "Evidence must be tamper-evident. A reviewer has to be able to prove that what was signed off is exactly what was collected.",
@@ -85,11 +85,11 @@ export const projects: Project[] = [
       "Conversational assistant integration",
     ],
     overview:
-      "A business accounting platform needed to open its ledger to partners and connect to the tools its customers already use. Nemma built and extended the backend services behind it: a partner API with key-based access, payroll pay-period handling, document ingestion, and integrations with an e-commerce platform and a conversational assistant.",
+      "A business accounting platform needed to open its ledger to partners and connect to the tools its customers already use. Nemaa built and extended the backend services behind it: a partner API with key-based access, payroll pay-period handling, document ingestion, and integrations with an e-commerce platform and a conversational assistant.",
     challenge: [
       "Partner access has to be scoped precisely. A partner can act on the customers it is authorised for and nothing else.",
       "Payroll pay periods change status through concurrent processes, and a race between them can leave a period in an inconsistent state.",
-      "Customers wanted their sales and documents to flow into the ledger without re-keying, which means integrations with systems that Nemma does not control.",
+      "Customers wanted their sales and documents to flow into the ledger without re-keying, which means integrations with systems that Nemaa does not control.",
     ],
     approach: [
       "Organised the codebase into packages with explicit boundaries, so partner-facing modules, payroll, and integrations can change independently.",
@@ -125,13 +125,13 @@ export const projects: Project[] = [
     reviewBeforePublish: true,
   },
   {
-    slug: "nemma-pulse",
-    title: "Nemma Pulse: attendance and permissions on Telegram",
+    slug: "nemaa-pulse",
+    title: "Nemaa Pulse: attendance and permissions on Telegram",
     category: "Automation",
     status: "in-development",
     summary:
-      "An internal Nemma product for attendance check-ins and permission requests, delivered where the team already is: Telegram.",
-    role: "Internal product, designed and built by Nemma",
+      "An internal Nemaa product for attendance check-ins and permission requests, delivered where the team already is: Telegram.",
+    role: "Internal product, designed and built by Nemaa",
     scope: [
       "Modular monolith service",
       "Telegram bot interface",
@@ -140,7 +140,7 @@ export const projects: Project[] = [
       "Docker-based deployment",
     ],
     overview:
-      "Nemma Pulse is an internal tool being built by Nemma for its own team. Employees check in, request time away, and get answers through a Telegram bot; managers approve and see the state of their team from the same place. It is also a proving ground for how we structure backend services.",
+      "Nemaa Pulse is an internal tool being built by Nemaa for its own team. Employees check in, request time away, and get answers through a Telegram bot; managers approve and see the state of their team from the same place. It is also a proving ground for how we structure backend services.",
     challenge: [
       "A separate attendance app would not get used. The interface had to live inside a messaging tool people already have open.",
       "Attendance and permission rules involve teams, roles, and time, and they must be enforced the same way regardless of which handler receives the message.",

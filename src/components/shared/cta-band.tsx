@@ -9,19 +9,22 @@ export function CtaBand({
   body = "Tell us what you are trying to do. We will reply with a clear view of how we would approach it.",
   primary = { label: "Start a project", href: "/contact?type=project" },
   secondary = { label: "See our work", href: "/work" },
+  fill = false,
 }: {
+  /** Fill the available height (used as the home page's last chapter). */
+  fill?: boolean;
   title?: string;
   body?: string;
   primary?: { label: string; href: string };
   secondary?: { label: string; href: string };
 }) {
   return (
-    <section className="relative overflow-hidden border-t border-border bg-card">
+    <section className={fill ? "relative flex flex-1 flex-col overflow-hidden border-t border-border bg-card" : "relative overflow-hidden border-t border-border bg-card"}>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 right-[-10%] size-[34rem] rounded-full bg-brand/10 blur-3xl"
       />
-      <Container className="section relative">
+      <Container className={fill ? "section relative flex flex-1 flex-col justify-center" : "section relative"}>
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <h2 className="text-h1">{title}</h2>

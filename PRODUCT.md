@@ -2,7 +2,7 @@
 
 <!-- impeccable:product-schema 1 -->
 
-> Facts below come from the written brief supplied at project start. Items marked *(inferred)* were not confirmed by a person and should be reviewed by Nemma before launch.
+> Facts below come from the written brief supplied at project start. Items marked *(inferred)* were not confirmed by a person and should be reviewed by Nemaa before launch.
 
 ## Platform
 
@@ -14,22 +14,22 @@ Next.js (App Router) + TypeScript + Tailwind CSS v4 + shadcn/ui + Lucide React +
 
 ## Users
 
-- Decision-makers at businesses who need custom software built: founders, operations leads, finance leads, CTOs. They are evaluating whether Nemma can be trusted with a serious build.
-- Engineers considering working at Nemma.
+- Decision-makers at businesses who need custom software built: founders, operations leads, finance leads, CTOs. They are evaluating whether Nemaa can be trusted with a serious build.
+- Engineers considering working at Nemaa.
 - Secondary: partners and general enquiries.
 
 ## Product Purpose
 
-The company website for Nemma Technology, a software development company. It presents Nemma professionally, attracts software development clients, showcases products and engineering work, supports recruitment, and demonstrates experience building accounting, fintech, and business software.
+The company website for Nemaa Technology, a software development company. It presents Nemaa professionally, attracts software development clients, showcases products and engineering work, supports recruitment, and demonstrates experience building accounting, fintech, and business software.
 
 ## Positioning
 
-Nemma builds serious business software: accounting and fintech systems, AI and automation, and the backend infrastructure under them. The site should make one impression: "these people build serious software."
+Nemaa builds serious business software: accounting and fintech systems, AI and automation, and the backend infrastructure under them. The site should make one impression: "these people build serious software."
 
 ## Operating Context
 
 - Visitors arrive from search, referrals, or outreach and read on laptops and phones during working hours *(inferred)*.
-- Contact happens through a form (no delivery backend configured yet) and through direct email/links that Nemma will supply.
+- Contact happens through a form (no delivery backend configured yet) and through direct email/links that Nemaa will supply.
 
 ## Capabilities and Constraints
 
@@ -38,11 +38,11 @@ Nemma builds serious business software: accounting and fintech systems, AI and a
 - Routes: /, /services, /work, /work/[slug], /about, /careers, /contact.
 - Contact form is frontend-only until a delivery service is wired up. The UI must not claim messages are sent.
 - No verified job openings. Careers page uses an open invitation instead of listings.
-- Nemma must not be described as owning, operating, or partnering with Count, KBF, or any other company.
+- Nemaa must not be described as owning, operating, or partnering with Count, KBF, or any other company.
 
 ## Brand Commitments
 
-- Name: Nemma Technology (also "Nemma").
+- Name: Nemaa Technology (also "Nemaa").
 - No official logo yet. The site uses a clearly temporary geometric mark that must be trivially replaceable.
 - Voice: plain, concrete, engineering-minded. No "leverage cutting-edge technologies" marketing filler.
 - Suggested palette foundation (not mandatory): dark #0B1220, text #0F172A, teal #14B8A6, blue #2563EB, background #F8FAFC, borders #E2E8F0, muted #64748B. Typography: Inter, Geist, or a comparable clean sans.
@@ -54,7 +54,7 @@ Nemma builds serious business software: accounting and fintech systems, AI and a
 
 ## Product Principles
 
-1. Clarity over volume: every section must tell the visitor something concrete about what Nemma builds.
+1. Clarity over volume: every section must tell the visitor something concrete about what Nemaa builds.
 2. Trust is earned by specificity: name the systems, the stacks, the problems solved, never the adjectives.
 3. Restraint is the premium signal: one accent, one authored motion moment, quiet surfaces.
 4. Truthful by construction: content lives in typed files with review flags; nothing unverifiable ships as fact.

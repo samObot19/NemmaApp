@@ -15,7 +15,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description:
-    "Start a project, ask about working together, or introduce yourself. Contact Nemma Technology.",
+    "Start a project, ask about working together, or introduce yourself. Contact Nemaa Technology.",
   path: "/contact",
 });
 
@@ -23,7 +23,7 @@ const inquiryNotes: Record<(typeof inquiryTypes)[number]["value"], string> = {
   project:
     "You need software designed or built: a new system, a rebuild, or a hard problem inside an existing one.",
   partnership:
-    "You want to work with Nemma as a partner, a vendor, or on a shared product.",
+    "You want to work with Nemaa as a partner, a vendor, or on a shared product.",
   careers:
     "You are an engineer and want to tell us about yourself and what you have built.",
   general: "Anything else, including press and speaking.",

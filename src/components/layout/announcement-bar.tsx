@@ -7,7 +7,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { announcement } from "@/content/site";
 
-const storageKey = (id: string) => `nemma:announcement:${id}:dismissed`;
+const storageKey = (id: string) => `nemaa:announcement:${id}:dismissed`;
 const listeners = new Set<() => void>();
 
 function subscribe(listener: () => void) {

@@ -13,7 +13,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Careers",
   description:
-    "Engineering at Nemma Technology: the culture, the kind of work, what to expect, and how to introduce yourself.",
+    "Engineering at Nemaa Technology: the culture, the kind of work, what to expect, and how to introduce yourself.",
   path: "/careers",
 });
 
@@ -22,7 +22,7 @@ export default function CareersPage() {
     <>
       <PageHeader
         title="Build software that businesses rely on."
-        lede="Nemma is a small engineering team working on accounting, fintech, AI, and automation systems. We are interested in engineers who like owning a problem end to end and care about what happens after launch."
+        lede="Nemaa is a small engineering team working on accounting, fintech, AI, and automation systems. We are interested in engineers who like owning a problem end to end and care about what happens after launch."
       />
 
       <Container as="section" className="pb-16 lg:pb-24">
@@ -56,7 +56,7 @@ export default function CareersPage() {
         title="Want to build with us?"
         body="Send a short introduction and something you have built. We read every message."
         primary={{ label: "Introduce yourself", href: "/contact?type=careers" }}
-        secondary={{ label: "About Nemma", href: "/about" }}
+        secondary={{ label: "About Nemaa", href: "/about" }}
       />
     </>
   );

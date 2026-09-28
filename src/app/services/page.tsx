@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Services",
   description:
-    "Software engineering, fintech and accounting software, AI systems, backend and API engineering, and automation. What Nemma builds and how.",
+    "Software engineering, fintech and accounting software, AI systems, backend and API engineering, and automation. What Nemaa builds and how.",
   path: "/services",
 });
 

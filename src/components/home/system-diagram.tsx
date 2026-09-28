@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 /**
  * The site's single authored motion moment: a journal entry moving through
  * validation, posting, and the audit log, left to right. Values are
- * illustrative; the panel shows the kind of system Nemma builds.
+ * illustrative; the panel shows the kind of system Nemaa builds.
  */
 type Line = { text: string; value?: string };
 

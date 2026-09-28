@@ -7,7 +7,7 @@ export function Testimonials() {
   if (testimonials.length === 0) return null;
 
   return (
-    <Container as="section" className="section pt-0 lg:pt-0">
+    <Container as="div" className="section pt-0 lg:pt-0">
       <SectionHeading
         title="What clients say"
         lede="In their words, with their permission."

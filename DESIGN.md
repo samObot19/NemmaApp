@@ -1,12 +1,12 @@
 # Design
 
-The visual world for the Nemma Technology website: **dark studio**. Chosen on 2026-09-28 to replace the earlier light spec-sheet world. Refinements inherit this; a redesign replaces it.
+The visual world for the Nemaa Technology website: **dark studio**. Chosen on 2026-09-28 to replace the earlier light spec-sheet world. Refinements inherit this; a redesign replaces it.
 
 ## Direction contract
 
 - **Thesis.** A quiet, dark engineering studio. Depth comes from tone shifts between three navy surfaces and one hairline, never from gradients, glass, or cards nested in cards. It refuses the light SaaS landing page and the neon "AI" look alike.
 - **Own world.** Near-black navy base, two raised navy surfaces, white and tinted-grey text, one teal used as light (dots, glows, links, focus). Bricolage Grotesque for the display voice, Geist for everything read or operated, Geist Mono for real data. With the words removed, the page reads as a set of dark panels with a single glowing console.
-- **Story.** A visitor who runs a business understands within one viewport what Nemma builds, sees a real ledger transaction move through a system, and can start a conversation without a form standing in the way.
+- **Story.** A visitor who runs a business understands within one viewport what Nemaa builds, sees a real ledger transaction move through a system, and can start a conversation without a form standing in the way.
 - **First viewport.** Announcement bar, header, then a headline of up to fifteen characters per line at display size, a lede, two buttons, and below them the full-width posting-pipeline console with a soft teal light behind it.
 - **Form.** Stacked hero over a wide console, then a service grid with one lead panel, then work as stacked engagement panels.
 - **Finish.** Unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance.
@@ -43,6 +43,10 @@ Container 1200px, 24px gutters on mobile and 32px on desktop, twelve columns on 
 The world's one container is the **panel**: 1px hairline, 16.8px radius, card surface. Panels hover to the popover surface with a stronger edge. Panels never nest; the architecture preview inside a project panel sits on the page background, one tone down, and is the only exception.
 
 Grids: services as a six-column grid with the first panel spanning four; work as stacked full-width panels; facts and steps as ruled hairline grids without backgrounds.
+
+## Themes and chapters
+
+Two themes on one token set: dark studio is the default; the light theme keeps the same surfaces, panels, and teal-as-light rule in daylight (background #f6f7fb, card #ffffff, text #0a0f1a, secondary #4b5568, teal #0f766e). The toggle sits in the header and the choice persists per browser. The home page reads as chapters, one topic per screen: each chapter fills the viewport below the header, snaps gently at its start (not under reduced motion), and a right-edge dot navigation marks the chapter in view on desktop. Adapted from a portfolio reference on 2026-09-28.
 
 ## Borrowed devices
 

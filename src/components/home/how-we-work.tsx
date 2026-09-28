@@ -6,7 +6,7 @@ import { howWeWork } from "@/content/about";
 /** A real sequence, so the steps are numbered. */
 export function HowWeWork() {
   return (
-    <Container as="section" className="section pt-0 lg:pt-0">
+    <Container as="div" className="section">
       <SectionHeading
         title="How we work"
         qualifier="Three steps, every engagement."
