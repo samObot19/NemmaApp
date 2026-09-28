@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nemma Technology website
 
-## Getting Started
+Company website for Nemma Technology, built with Next.js 16 (App Router), TypeScript, Tailwind CSS 4, shadcn/ui, Lucide, and Motion.
 
-First, run the development server:
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run lint
+npm run build && npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path | What it holds |
+|---|---|
+| `src/content/site.ts` | Name, tagline, URL, email, navigation, announcement bar, contact endpoint |
+| `src/content/services.ts` | The five service areas |
+| `src/content/projects.ts` | Case studies (see the review flag below) |
+| `src/content/technologies.ts` | The capability matrix |
+| `src/content/about.ts`, `careers.ts` | Philosophy, culture, openings |
+| `src/content/social-proof.ts` | Client logos and testimonials (empty until verified; sections stay hidden) |
+| `src/components/layout` | Navbar, mobile menu, footer, brand mark |
+| `src/components/shared` | Heading rows, definition rows, tags, hairline grid, CTA band |
+| `src/components/home`, `services`, `work`, `contact` | Page sections |
+| `src/lib/contact.ts` | Form validation and the delivery boundary |
+| `PRODUCT.md`, `DESIGN.md` | Product truth and the visual system (Impeccable) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Content is data; components only render it. Editing copy never requires touching a component.
 
-## Learn More
+## Before launch
 
-To learn more about Next.js, take a look at the following resources:
+1. **Domain and inbox.** `src/content/site.ts` still carries `nemma.example` placeholders for `url` and `email`. They appear in the footer, contact page, metadata, sitemap, and robots.
+2. **Case studies.** Entries in `src/content/projects.ts` with `reviewBeforePublish: true` were drafted from the structure of the engineering work, not from a verified brief. Review the wording, then flip the flag. Add an `outcome` only once it is verified.
+3. **Contact delivery.** The form validates on the client only. With `site.contactEndpoint` set to `null` the submit button reads "Send by email" and opens a prefilled email instead. Point `contactEndpoint` at a route handler or form service that accepts a JSON `ContactPayload` to enable real delivery.
+4. **Social proof.** `src/content/social-proof.ts` holds client logos and testimonials. Both lists are empty, so the "Businesses we have built for" band and the "What clients say" section do not render. Add verified entries (with permission) and they appear on the home page automatically.
+5. **Office map.** The contact page embeds a Google map for `site.address.mapQuery`. Check that the pin lands on the right building; if not, replace `mapQuery` with a more exact query or the coordinates from Google Maps (for example `8.9930,38.7890`).
+6. **Announcement bar.** `announcement` in `src/content/site.ts` controls the notice above the navbar. Set it to `null` to remove it.
+7. **Logo.** The mark in `src/components/layout/brand-mark.tsx` and `src/app/icon.svg` is a temporary geometric placeholder. Replace both when the official logo exists; the Open Graph image in `src/app/opengraph-image.tsx` draws the same mark inline.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The visual system is documented in `DESIGN.md`. In short: light surfaces with two dark bands, one teal accent, Geist for text and Geist Mono only for real code and data, structure carried by hairline rules and aligned columns rather than cards, and a single authored motion moment in the hero (rendered in its final state under `prefers-reduced-motion`).
