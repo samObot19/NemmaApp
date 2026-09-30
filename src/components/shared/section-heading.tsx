@@ -10,6 +10,7 @@ export function SectionHeading({
   qualifier,
   lede,
   as: Heading = "h2",
+  size = "default",
   className,
   action,
 }: {
@@ -18,6 +19,8 @@ export function SectionHeading({
   qualifier?: string;
   lede?: string;
   as?: "h1" | "h2";
+  /** `lg` for chapter-opening headings on the home page. */
+  size?: "default" | "lg";
   className?: string;
   action?: React.ReactNode;
 }) {
@@ -28,7 +31,7 @@ export function SectionHeading({
         className,
       )}
     >
-      <Heading className="text-h2 lg:col-span-5">
+      <Heading className={cn(size === "lg" ? "text-h1" : "text-h2", "lg:col-span-5")}>
         {title}
         {qualifier && (
           <span className="block text-muted-foreground">{qualifier}</span>

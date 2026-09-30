@@ -12,7 +12,9 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
+import { Chapter } from "@/components/shared/chapter";
 import { CheckList } from "@/components/shared/check-list";
+import { PageChapters } from "@/components/shared/page-chapters";
 import { CtaBand } from "@/components/shared/cta-band";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { ArchitectureDiagram } from "@/components/work/architecture-diagram";
@@ -53,17 +55,23 @@ function Prose({ paragraphs }: { paragraphs: string[] }) {
 }
 
 function Block({
+  id,
   title,
   children,
 }: {
+  id: string;
   title: string;
   children: React.ReactNode;
 }) {
   return (
-    <section className="grid gap-4 border-t border-border py-10 lg:grid-cols-12 lg:gap-8 lg:py-12">
-      <h2 className="text-h3 lg:col-span-4">{title}</h2>
-      <div className="lg:col-span-8">{children}</div>
-    </section>
+    <Chapter id={id} label={title}>
+      <Container className="py-10 lg:py-14">
+        <div className="grid gap-6 border-t border-border pt-8 lg:grid-cols-12 lg:gap-8">
+          <h2 className="text-h1 lg:col-span-4">{title}</h2>
+          <div className="lg:col-span-8">{children}</div>
+        </div>
+      </Container>
+    </Chapter>
   );
 }
 
@@ -73,10 +81,22 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
 
   const related = getRelatedProjects(project.slug);
+  const chapters = [
+    { id: "overview", label: "Overview" },
+    { id: "challenge", label: "The challenge" },
+    { id: "approach", label: "Our approach" },
+    { id: "architecture", label: "Architecture" },
+    { id: "capabilities", label: "Key capabilities" },
+    ...(project.outcome && project.outcome.length > 0 ? [{ id: "outcome", label: "Outcome" }] : []),
+    ...(related.length > 0 ? [{ id: "related", label: "Related work" }] : []),
+    { id: "contact", label: "Contact" },
+  ];
 
   return (
     <>
-      <Container as="article" className="pt-16 pb-16 lg:pt-24 lg:pb-24">
+      <PageChapters chapters={chapters} />
+      <Chapter id="overview" label="Overview" reveal={false}>
+      <Container as="article" className="py-10 lg:py-14">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -97,16 +117,17 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </div>
 
-        <div className="mt-12">
+        <div className="mt-10">
           <EngagementFacts project={project} />
         </div>
+      </Container>
+      </Chapter>
 
-        <div className="mt-8">
-          <Block title="The challenge">
+          <Block id="challenge" title="The challenge">
             <Prose paragraphs={project.challenge} />
           </Block>
 
-          <Block title="Our approach">
+          <Block id="approach" title="Our approach">
             <ol className="flex flex-col gap-6">
               {project.approach.map((step, index) => (
                 <li key={step} className="grid grid-cols-[2rem_1fr] gap-3">
@@ -119,7 +140,7 @@ export default async function ProjectPage({ params }: Props) {
             </ol>
           </Block>
 
-          <Block title="Architecture">
+          <Block id="architecture" title="Architecture">
             <ArchitectureDiagram
               layers={project.architecture}
               title={`${project.slug}.architecture`}
@@ -128,37 +149,39 @@ export default async function ProjectPage({ params }: Props) {
             <CheckList items={project.engineering} className="mt-4" />
           </Block>
 
-          <Block title="Key capabilities">
+          <Block id="capabilities" title="Key capabilities">
             <CheckList items={project.capabilities} columns={2} />
           </Block>
 
           {project.outcome && project.outcome.length > 0 && (
-            <Block title="Outcome">
+            <Block id="outcome" title="Outcome">
               <Prose paragraphs={project.outcome} />
             </Block>
           )}
-        </div>
-      </Container>
 
       {related.length > 0 && (
-        <Container as="section" className="pb-16 lg:pb-24">
-          <SectionHeading
-            title="Related work"
-            action={
-              <Button asChild variant="link">
-                <Link href="/work">All case studies</Link>
-              </Button>
-            }
-          />
-          <ul className="mt-10 flex flex-col gap-4">
-            {related.map((item) => (
-              <ProjectRow key={item.slug} project={item} />
-            ))}
-          </ul>
-        </Container>
+        <Chapter id="related" label="Related work">
+          <Container className="py-10 lg:py-14">
+            <SectionHeading
+              title="Related work"
+              action={
+                <Button asChild variant="link">
+                  <Link href="/work">All case studies</Link>
+                </Button>
+              }
+            />
+            <ul className="mt-6 flex flex-col gap-4">
+              {related.map((item) => (
+                <ProjectRow key={item.slug} project={item} />
+              ))}
+            </ul>
+          </Container>
+        </Chapter>
       )}
 
+      <Chapter id="contact" label="Contact" className="justify-stretch" reveal={false}>
       <CtaBand
+        fill
         title="Building something similar?"
         body="Tell us about your system. We will reply with how we would approach it, what we would build first, and what we would leave out. No commitment needed to start the conversation."
         primary={{
@@ -167,6 +190,7 @@ export default async function ProjectPage({ params }: Props) {
         }}
         secondary={{ label: "All case studies", href: "/work" }}
       />
+      </Chapter>
     </>
   );
 }

@@ -10,9 +10,9 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-40 bg-background">
+    <>
       <AnnouncementBar />
-      <div className="border-b border-border">
+      <header className="sticky top-0 z-40 border-b border-border bg-background">
         <Container className="flex h-16 items-center justify-between">
           <Logo />
           <DesktopNav />
@@ -24,7 +24,7 @@ export function Navbar() {
             <MobileNav />
           </div>
         </Container>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }

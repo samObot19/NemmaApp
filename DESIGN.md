@@ -46,7 +46,7 @@ Grids: services as a six-column grid with the first panel spanning four; work as
 
 ## Themes and chapters
 
-Two themes on one token set: dark studio is the default; the light theme keeps the same surfaces, panels, and teal-as-light rule in daylight (background #f6f7fb, card #ffffff, text #0a0f1a, secondary #4b5568, teal #0f766e). The toggle sits in the header and the choice persists per browser. The home page reads as chapters, one topic per screen: each chapter fills the viewport below the header, snaps gently at its start (not under reduced motion), and a right-edge dot navigation marks the chapter in view on desktop. Adapted from a portfolio reference on 2026-09-28.
+Two themes on one token set: dark studio is the default; the light theme keeps the same surfaces, panels, and teal-as-light rule in daylight (background #f6f7fb, card #ffffff, text #0a0f1a, secondary #4b5568, teal #0f766e). The toggle sits in the header and the choice persists per browser. Every page reads as chapters, one idea per screen. The home page: intro, what we build, one screen per service, selected work, how we work, contact. Each chapter fills the viewport below the header (5rem scroll padding), eases in the first time it is scrolled to, snaps firmly at its start on desktop and gently on phones (never under reduced motion), and a right-edge dot navigation marks the chapter in view on desktop. The announcement bar scrolls away so only the 64px header is sticky. Services gives each service a screen, Work gives each case study a screen, a case study gives each section a screen, and About, Careers, and Contact follow the same pattern. Adapted from a portfolio reference on 2026-09-28.
 
 ## Borrowed devices
 

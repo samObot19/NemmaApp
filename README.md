@@ -41,7 +41,7 @@ Content is data; components only render it. Editing copy never requires touching
 
 ## Theme and home chapters
 
-The site ships a dark theme by default and a light theme behind the header toggle (next-themes, class strategy, persisted per browser). Both themes come from the token sets in `src/app/globals.css`. The home page is composed of chapters (`src/components/home/chapter.tsx`), one topic per screen with gentle scroll snapping and a chapter dot navigation on desktop; the chapter list lives in `src/app/page.tsx`.
+The site ships a dark theme by default and a light theme behind the header toggle (next-themes, class strategy, persisted per browser). Both themes come from the token sets in `src/app/globals.css`. Every page is composed of chapters (`src/components/home/chapter.tsx`), one idea per screen: each chapter fills the viewport, eases in when scrolled to (`reveal.tsx`), snaps at its start (firmly on desktop, gently on phones), and a dot navigation on desktop marks the chapter in view. The service screens live in `src/components/home/service-chapters.tsx`; each page declares its chapter list next to its sections (see `src/app/page.tsx`, `src/app/services/page.tsx`, and the others).
 
 ## Design notes
 

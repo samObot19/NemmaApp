@@ -20,7 +20,7 @@ export function ArchitectureDiagram({
         {layers.map((layer) => (
           <li
             key={layer.label}
-            className="grid gap-3 px-5 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6 sm:py-5"
+            className="grid gap-3 px-5 py-3 sm:grid-cols-[9rem_1fr] sm:gap-6 sm:py-3.5"
           >
             <p className="text-sm font-medium text-muted-foreground sm:pt-2">
               {layer.label}

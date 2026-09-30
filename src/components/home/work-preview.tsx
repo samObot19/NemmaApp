@@ -8,9 +8,10 @@ import { projects } from "@/content/projects";
 
 export function WorkPreview() {
   return (
-    <Container as="div" className="section">
+    <Container as="div" className="py-10 lg:py-12">
       <SectionHeading
         title="Selected work"
+        size="lg"
         qualifier="Evidence, not adjectives."
         lede="Systems we have designed and built. Each case study records our role, what was delivered, and the architecture behind it."
         action={
@@ -19,7 +20,7 @@ export function WorkPreview() {
           </Button>
         }
       />
-      <div className="mt-10">
+      <div className="mt-6">
         <WorkShowcase projects={projects} />
       </div>
     </Container>

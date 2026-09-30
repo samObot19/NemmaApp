@@ -17,7 +17,7 @@ export function LocationMap() {
         loading="lazy"
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
-        className="map-dark block aspect-[16/9] w-full border-0 sm:aspect-[16/7]"
+        className="map-dark block aspect-[16/9] w-full border-0 sm:aspect-[16/7] lg:aspect-[16/6]"
       />
       <figcaption className="flex flex-col gap-3 border-t border-border p-5 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-start gap-3">

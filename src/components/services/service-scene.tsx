@@ -71,7 +71,7 @@ const scenes: Record<ServiceSlug, React.ReactNode> = {
   ),
   "ai-systems": (
     <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 p-3">
-      <div className="flex flex-col gap-2 rounded-md border border-border p-2.5">
+      <div className="flex flex-col gap-2 border-l border-border py-1 pl-3">
         <Bar w="w-10" strong />
         <Bar w="w-full" />
         <Bar w="w-11/12" />

@@ -6,6 +6,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Container } from "@/components/layout/container";
 import { ContactForm } from "@/components/contact/contact-form";
 import { LocationMap } from "@/components/contact/location-map";
+import { Chapter } from "@/components/shared/chapter";
+import { PageChapters } from "@/components/shared/page-chapters";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { PageHeader } from "@/components/shared/page-header";
 import { site } from "@/content/site";
@@ -46,15 +48,23 @@ function ContactFormSkeleton() {
   );
 }
 
+const chapters = [
+  { id: "message", label: "Send a message" },
+  { id: "location", label: "Where we are" },
+];
+
 export default function ContactPage() {
   return (
     <>
+      <PageChapters chapters={chapters} />
+      <Chapter id="message" label="Send a message" reveal={false}>
       <PageHeader
         title="Contact"
         lede="Tell us what you are working on. We reply with a clear view of how we would approach it, and whether we are the right fit."
+        className="pt-8 pb-6 lg:pt-10 lg:pb-8"
       />
-      <Container as="section" className="pb-16 lg:pb-24">
-        <div className="grid gap-12 border-t border-border pt-10 lg:grid-cols-12 lg:gap-8">
+      <Container as="section" className="pb-10 lg:pb-14">
+        <div className="grid gap-12 border-t border-border pt-8 lg:grid-cols-12 lg:gap-8">
           <aside className="order-2 lg:order-1 lg:col-span-4">
             <dl className="divide-y divide-border">
               {inquiryTypes.map((type) => (
@@ -100,15 +110,19 @@ export default function ContactPage() {
           </div>
         </div>
       </Container>
-      <Container as="section" id="location" className="scroll-mt-24 pb-16 lg:pb-24">
-        <SectionHeading
-          title="Where we are"
-          lede="Our office is in Bole, Addis Ababa. If you would rather talk in person, say so in your message and we will arrange a time."
-        />
-        <div className="mt-8">
-          <LocationMap />
-        </div>
-      </Container>
+      </Chapter>
+      <Chapter id="location" label="Where we are">
+        <Container className="py-10 lg:py-14">
+          <SectionHeading
+            title="Where we are"
+            size="lg"
+            lede="Our office is in Bole, Addis Ababa. If you would rather talk in person, say so in your message and we will arrange a time."
+          />
+          <div className="mt-8">
+            <LocationMap />
+          </div>
+        </Container>
+      </Chapter>
     </>
   );
 }

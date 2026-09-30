@@ -261,14 +261,20 @@
     filter: invert(0.92) hue-rotate(180deg) saturate(0.55) brightness(0.95);
   }
 
-  /* Home chapters: one topic per screen, snapping gently at each start. */
+  /* Home chapters: one idea per screen. Firm snapping on desktop, where
+     every chapter fits a screen; gentle on phones, where some grow past it. */
   .chapters {
     scroll-snap-type: y proximity;
   }
+  @media (min-width: 64rem) {
+    .chapters {
+      scroll-snap-type: y mandatory;
+    }
+  }
   .chapter {
-    min-height: calc(100svh - 4rem);
+    min-height: calc(100svh - 5rem);
     scroll-snap-align: start;
-    scroll-margin-top: 4rem;
+    scroll-snap-stop: always;
   }
   @media (prefers-reduced-motion: reduce) {
     .chapters {

@@ -13,7 +13,7 @@ export function PageHeader({
   className?: string;
 }) {
   return (
-    <Container as="section" className={cn("pt-16 pb-12 lg:pt-24 lg:pb-16", className)}>
+    <Container as="section" className={cn("pt-10 pb-10 lg:pt-14 lg:pb-14", className)}>
       <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
         <h1 className="text-h1 lg:col-span-7">{title}</h1>
         {lede && (

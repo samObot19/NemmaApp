@@ -17,7 +17,7 @@ export function WorkShowcase({ projects }: { projects: Project[] }) {
   if (!first) return null;
 
   return (
-    <Tabs defaultValue={first.slug} className="gap-6">
+    <Tabs defaultValue={first.slug} className="gap-4">
       <TabsList className="h-auto flex-wrap justify-start gap-1 rounded-lg bg-transparent p-0">
         {projects.map((project) => (
           <TabsTrigger
@@ -31,7 +31,7 @@ export function WorkShowcase({ projects }: { projects: Project[] }) {
       </TabsList>
       {projects.map((project) => (
         <TabsContent key={project.slug} value={project.slug}>
-          <article className="panel grid gap-8 p-6 lg:grid-cols-12 lg:p-8">
+          <article className="panel grid gap-8 p-5 lg:grid-cols-12 lg:p-6">
             <div className="flex flex-col lg:col-span-5">
               <p className="text-label">{projectStatusLabel[project.status]}</p>
               <h3 className="text-h3 mt-2">

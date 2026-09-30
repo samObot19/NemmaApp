@@ -55,7 +55,7 @@ export function ChapterNav({
                 aria-current={current ? "true" : undefined}
                 className="group flex min-h-6 items-center justify-end gap-3 rounded-sm"
               >
-                <span className="text-label pointer-events-none translate-x-1 opacity-0 transition-[opacity,transform] duration-150 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 motion-reduce:transition-none">
+                <span className={cn("text-label pointer-events-none translate-x-1 opacity-0 transition-[opacity,transform] duration-150 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 motion-reduce:transition-none", current && "translate-x-0 text-foreground opacity-100")}>
                   {chapter.label}
                 </span>
                 <span
