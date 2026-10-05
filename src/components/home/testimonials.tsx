@@ -2,14 +2,18 @@ import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { testimonials } from "@/content/social-proof";
 
-/** Client quotes. Renders nothing until `testimonials` has verified entries. */
+/**
+ * Client quotes. Renders nothing until `testimonials` has verified entries;
+ * the home page adds its chapter only then.
+ */
 export function Testimonials() {
   if (testimonials.length === 0) return null;
 
   return (
-    <Container as="div" className="section pt-0 lg:pt-0">
+    <Container as="div" className="py-10 lg:py-14">
       <SectionHeading
         title="What clients say"
+        size="lg"
         lede="In their words, with their permission."
       />
       <ul className="mt-4 grid gap-px border-t border-border md:grid-cols-2">

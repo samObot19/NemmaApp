@@ -79,3 +79,54 @@ export interface NavItem {
   label: string;
   href: string;
 }
+
+/**
+ * A fact only Nemaa can supply. `null` until it has been confirmed; never
+ * estimated. Content that is still `null` previews in development and is
+ * left out of production builds.
+ */
+export type NeedsInput<T> = T | null;
+
+/** A chapter's heading copy, kept with its content rather than in the component. */
+export interface SectionCopy {
+  title: string;
+  /** Second line of the title, set in the muted tone. */
+  qualifier?: string;
+  lede: string;
+}
+
+export interface Industry extends Principle {
+  /** Services this industry's work usually draws on. */
+  services: ServiceSlug[];
+  /** The case study that shows the work, if one is published. */
+  projectSlug?: string;
+}
+
+export interface EngagementModel extends Principle {
+  /**
+   * Whether Nemaa has confirmed it offers this way of working. Unconfirmed
+   * models preview in development and stay out of production builds.
+   */
+  confirmed: boolean;
+  /** A case study that shows this way of working, if one is published. */
+  projectSlug?: string;
+}
+
+export interface Stat {
+  label: string;
+  /** The figure as it should read, e.g. "12" or "40%". */
+  value: NeedsInput<string>;
+  /** What was counted and when, e.g. "Counted from deploy logs, September 2026". */
+  basis: NeedsInput<string>;
+}
+
+export interface WorkingNorm {
+  term: string;
+  value: NeedsInput<string>;
+}
+
+export interface Faq {
+  question: string;
+  answer: NeedsInput<string>;
+  link?: NavItem;
+}

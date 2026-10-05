@@ -46,11 +46,11 @@ Grids: services as a six-column grid with the first panel spanning four; work as
 
 ## Themes and chapters
 
-Two themes on one token set: dark studio is the default; the light theme keeps the same surfaces, panels, and teal-as-light rule in daylight (background #f6f7fb, card #ffffff, text #0a0f1a, secondary #4b5568, teal #0f766e). The toggle sits in the header and the choice persists per browser. Every page reads as chapters, one idea per screen. The home page: intro, what we build, one screen per service, selected work, how we work, contact. Each chapter fills the viewport below the header (5rem scroll padding), eases in the first time it is scrolled to, snaps firmly at its start on desktop and gently on phones (never under reduced motion), and a right-edge dot navigation marks the chapter in view on desktop. The announcement bar scrolls away so only the 64px header is sticky. Services gives each service a screen, Work gives each case study a screen, a case study gives each section a screen, and About, Careers, and Contact follow the same pattern. Adapted from a portfolio reference on 2026-09-28.
+Two themes on one token set: dark studio is the default; the light theme keeps the same surfaces, panels, and teal-as-light rule in daylight (background #f6f7fb, card #ffffff, text #0a0f1a, secondary #4b5568, teal #0f766e). The toggle sits in the header and the choice persists per browser. Every page reads as chapters, one idea per screen. The home page: intro, what we build, one screen per service, selected work, what clients say (once verified quotes exist), how we work, why Nemaa, industries, by the numbers (once verified figures exist), technology, how we plug into your team, questions, where we are, contact. A chapter that waits for real content is left out of both the page and the dot navigation until it has some. Each chapter fills the viewport below the header (5rem scroll padding), eases in the first time it is scrolled to, snaps firmly at its start on desktop and gently on phones (never under reduced motion), and a right-edge dot navigation marks the chapter in view on desktop. The announcement bar scrolls away so only the 64px header is sticky. Services gives each service a screen, Work gives each case study a screen, a case study gives each section a screen, and About, Careers, and Contact follow the same pattern. Adapted from a portfolio reference on 2026-09-28.
 
 ## Borrowed devices
 
-Adapted from supabase.com on 2026-09-28, translated into this world: feature panels that show a miniature of what the service produces (browser, ledger, extraction, terminal, workflow) instead of an icon; a two-tone heading device where a muted second line qualifies the white first line; a tabbed showcase that switches a large architecture figure; and a one-line closing statement under the feature grid. Not borrowed: customer logos, testimonials, community counts, and code samples, because none of those can be shown truthfully yet.
+Adapted from supabase.com on 2026-09-28, translated into this world: feature panels that show a miniature of what the service produces (browser, ledger, extraction, terminal, workflow) instead of an icon; a two-tone heading device where a muted second line qualifies the white first line; a tabbed showcase that switches a large architecture figure; and a one-line closing statement under the feature grid. Not borrowed: code samples. Customer logos, testimonials, and figures render only once they are real: each list is empty or `null` until Nemaa supplies it, and a figure always shows what was counted and when.
 
 ## Components
 
@@ -58,7 +58,11 @@ Adapted from supabase.com on 2026-09-28, translated into this world: feature pan
 - Console (hero): panel with a header bar in mono and four stages in a row on desktop, stacked on mobile.
 - Service glyph: crisp geometric diagram per service, hairline strokes in border-strong with one teal detail.
 - Architecture preview and figure: layered rows of labelled boxes.
-- Engagement facts: three ruled cells (role, scope, status).
+- Engagement facts: three ruled cells (role, scope, status), built on the shared fact grid.
+- Fact grid: a label over its value in ruled cells, two to four columns, no backgrounds. Used for engagement facts, working norms, and figures (figure in the h1 size with tabular numerals, its basis in the label style beneath).
+- Tag (badge, outline only): hairline pill at the label size for tools and related services; never filled, never teal.
+- Questions: native disclosure rows on hairlines beside the chapter title; a plus turns 45 degrees when open, one answer open at a time.
+- Needs-input marker: a dashed hairline tag in mono, shown only in development where Nemaa still has to supply a value; production builds leave those items out.
 - Brand mark: placeholder geometric N, white with a teal diagonal.
 
 ## Motion

@@ -17,11 +17,29 @@ export interface ClientLogo {
   href?: string;
 }
 
+/**
+ * A client quote, exactly as the person approved it. When the list has
+ * entries, the home page gains a "What clients say" chapter after the work.
+ * Two or four entries fill the two-column grid.
+ */
 export interface Testimonial {
+  /** Verbatim, as approved by the person quoted. Never paraphrased. */
   quote: string;
   name: string;
   role: string;
+  /** The company name as they want it shown. */
   company: string;
+  /**
+   * ISO date of the written permission (an email is fine) to publish the
+   * quote with this name and company. Never rendered; it records that
+   * permission exists.
+   */
+  permissionOn: string;
+  /**
+   * Case study this quote is about. Case studies are anonymous, so only set
+   * this if the client has also agreed to be named on that case study.
+   */
+  projectSlug?: string;
 }
 
 export const clients: ClientLogo[] = [];
