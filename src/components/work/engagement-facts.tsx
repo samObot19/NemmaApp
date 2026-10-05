@@ -1,3 +1,4 @@
+import { FactCell, FactGrid } from "@/components/shared/fact-grid";
 import { projectStatusLabel } from "@/content/projects";
 import type { Project } from "@/types/content";
 
@@ -8,30 +9,21 @@ import type { Project } from "@/types/content";
  */
 export function EngagementFacts({ project }: { project: Project }) {
   return (
-    <dl className="grid border-t border-border md:grid-cols-3">
-      <Cell term="Our role">
+    <FactGrid columns={3}>
+      <FactCell term="Our role">
         <p className="text-small font-medium">{project.role}</p>
-      </Cell>
-      <Cell term="Scope">
+      </FactCell>
+      <FactCell term="Scope">
         <ul className="text-small flex flex-col gap-1">
           {project.scope.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-      </Cell>
-      <Cell term="Status">
+      </FactCell>
+      <FactCell term="Status">
         <p className="text-small font-medium">{projectStatusLabel[project.status]}</p>
         <p className="text-small mt-1 text-muted-foreground">{project.category}</p>
-      </Cell>
-    </dl>
-  );
-}
-
-function Cell({ term, children }: { term: string; children: React.ReactNode }) {
-  return (
-    <div className="border-b border-border py-5 last:border-b-0 md:px-6 md:[&:not(:nth-child(3n))]:border-r md:[&:nth-child(3n+1)]:pl-0 md:[&:nth-child(3n)]:pr-0 md:[&:nth-last-child(-n+3)]:border-b-0">
-      <dt className="text-label">{term}</dt>
-      <dd className="mt-2">{children}</dd>
-    </div>
+      </FactCell>
+    </FactGrid>
   );
 }

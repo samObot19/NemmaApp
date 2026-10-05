@@ -45,7 +45,7 @@ export function ChapterNav({
       aria-label="Chapters"
       className="fixed top-1/2 right-4 z-30 hidden -translate-y-1/2 lg:block"
     >
-      <ol className="flex flex-col gap-3">
+      <ol className="flex flex-col gap-3 [@media(max-height:800px)]:gap-1">
         {chapters.map((chapter) => {
           const current = chapter.id === active;
           return (

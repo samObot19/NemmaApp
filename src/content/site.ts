@@ -19,6 +19,8 @@ export const site = {
   /** Office location. `mapQuery` is what the embedded map searches for. */
   address: {
     lines: ["Bole Medhanyalem, Hintsa", "Addis Ababa, Ethiopia"],
+    /** Short form used in running copy: "Bole, Addis Ababa". */
+    district: "Bole",
     locality: "Addis Ababa",
     country: "ET",
     mapQuery: "Hintsa, Bole Medhanialem, Addis Ababa, Ethiopia",

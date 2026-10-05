@@ -5,10 +5,9 @@ import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Container } from "@/components/layout/container";
 import { ContactForm } from "@/components/contact/contact-form";
-import { LocationMap } from "@/components/contact/location-map";
+import { LocationSection } from "@/components/contact/location-section";
 import { Chapter } from "@/components/shared/chapter";
 import { PageChapters } from "@/components/shared/page-chapters";
-import { SectionHeading } from "@/components/shared/section-heading";
 import { PageHeader } from "@/components/shared/page-header";
 import { site } from "@/content/site";
 import { inquiryTypes } from "@/lib/contact";
@@ -112,16 +111,7 @@ export default function ContactPage() {
       </Container>
       </Chapter>
       <Chapter id="location" label="Where we are">
-        <Container className="py-10 lg:py-14">
-          <SectionHeading
-            title="Where we are"
-            size="lg"
-            lede="Our office is in Bole, Addis Ababa. If you would rather talk in person, say so in your message and we will arrange a time."
-          />
-          <div className="mt-8">
-            <LocationMap />
-          </div>
-        </Container>
+        <LocationSection />
       </Chapter>
     </>
   );

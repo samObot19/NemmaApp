@@ -13,6 +13,7 @@ export function SectionHeading({
   size = "default",
   className,
   action,
+  children,
 }: {
   title: string;
   /** Second line of the title, set in the muted tone. */
@@ -23,6 +24,8 @@ export function SectionHeading({
   size?: "default" | "lg";
   className?: string;
   action?: React.ReactNode;
+  /** Body set beside the title, under the lede, when it reads best there. */
+  children?: React.ReactNode;
 }) {
   return (
     <div
@@ -37,9 +40,10 @@ export function SectionHeading({
           <span className="block text-muted-foreground">{qualifier}</span>
         )}
       </Heading>
-      {(lede || action) && (
+      {(lede || action || children) && (
         <div className="flex flex-col gap-4 lg:col-span-6 lg:col-start-7">
           {lede && <p className="text-lede measure">{lede}</p>}
+          {children}
           {action && <div>{action}</div>}
         </div>
       )}
